@@ -5,7 +5,12 @@
 	"description": "__MSG_appDesc__",
 	"default_locale": "en",
 	"background": {
-		"service_worker": "sw.js"
+		"service_worker": "sw.js",
+		 "scripts": [
+			"contentScripts/background.js",
+			"contentScripts/pomodoro-background.js",
+			"contentScripts/reminder-background.js"
+  		]
 	},
 	"version": "2.11.22",
 	"action": {
