@@ -155,6 +155,7 @@ module.exports = {
 				{ from: './node_modules/moment/moment.js', to: './' },
 				{ from: './node_modules/ua-parser-js/src/main/ua-parser.js', to: './' },
 				{ from: './sw.js', to: './' },
+				{ from: './src/background/countdown-alarm-background.js', to: './contentScripts/' },
 				{
 					from: './node_modules/react-datepicker/dist/react-datepicker.css',
 					to: './styles',

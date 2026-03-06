@@ -28,6 +28,7 @@ import locales from '../helpers/locales';
 import { numberFormatTransform } from '~/helpers/duration-formater';
 import { parseTime } from './time-input-parser';
 import { BannerContainer } from '~/components/NotificationBanners/BannerContainer.tsx';
+import CountdownAlarm from './countdown-alarm.component';
 
 const messages = [
 	'TIME_ENTRY_STARTED',
@@ -1584,6 +1585,7 @@ class HomePage extends Component {
 								/>
 							)}
 						</div>
+						<CountdownAlarm />
 						{pomodoroEnabled && isFocusModeEnabled && inProgress ? (
 							<div>
 								<CountdownTimer
