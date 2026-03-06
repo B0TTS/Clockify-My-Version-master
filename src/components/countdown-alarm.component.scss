@@ -1,0 +1,166 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   countdown-alarm.component.scss
+   Styles for the CountdownAlarm popup panel.
+   Add  @import './countdown-alarm.component';  to the extension's main .scss
+   ───────────────────────────────────────────────────────────────────────────── */
+
+// ── Design tokens (match Clockify extension palette) ──────────────────────────
+$c-brand        : #03a9f4;
+$c-warning      : #ff9800;
+$c-overtime     : #e53935;
+$c-success      : #43a047;
+$c-text         : #333;
+$c-text-light   : #777;
+$c-bg-card      : #fff;
+$c-border       : #e0e0e0;
+$radius         : 6px;
+
+// ── Container ─────────────────────────────────────────────────────────────────
+.countdown-alarm {
+    padding: 14px 16px 16px;
+    border-top: 1px solid $c-border;
+    background: $c-bg-card;
+
+    &__title {
+        font-size: 13px;
+        font-weight: 600;
+        color: $c-text;
+        margin: 0 0 12px;
+    }
+}
+
+// ── Idle form ─────────────────────────────────────────────────────────────────
+.countdown-alarm__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.countdown-alarm__label {
+    font-size: 12px;
+    color: $c-text-light;
+    margin: 0;
+}
+
+.countdown-alarm__inputs {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        font-size: 11px;
+        color: $c-text-light;
+    }
+
+    input[type='number'] {
+        width: 56px;
+        padding: 5px 7px;
+        border: 1px solid $c-border;
+        border-radius: $radius;
+        font-size: 14px;
+        text-align: center;
+        color: $c-text;
+        outline: none;
+
+        &:focus {
+            border-color: $c-brand;
+            box-shadow: 0 0 0 2px rgba($c-brand, 0.18);
+        }
+    }
+}
+
+.countdown-alarm__colon {
+    font-size: 20px;
+    font-weight: 700;
+    color: $c-text;
+    padding-bottom: 3px;
+    line-height: 1;
+}
+
+// ── Running / warning display ─────────────────────────────────────────────────
+.countdown-alarm__display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    &--warning .countdown-alarm__timer {
+        color: $c-warning;
+    }
+
+    &--overtime .countdown-alarm__timer {
+        color: $c-overtime;
+    }
+
+    &--done {
+        text-align: center;
+    }
+}
+
+.countdown-alarm__timer {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: $c-brand;
+    font-variant-numeric: tabular-nums;
+
+    &--overtime {
+        color: $c-overtime;
+    }
+}
+
+.countdown-alarm__phase-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: $c-text;
+    margin: 0;
+}
+
+.countdown-alarm__hint {
+    font-size: 11px;
+    color: $c-text-light;
+    text-align: center;
+    margin: 0;
+    line-height: 1.45;
+}
+
+.countdown-alarm__actions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+}
+
+// ── Buttons ───────────────────────────────────────────────────────────────────
+.countdown-alarm__btn {
+    padding: 7px 14px;
+    border: none;
+    border-radius: $radius;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s, box-shadow 0.15s;
+
+    &:hover   { opacity: 0.88; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); }
+    &:active  { opacity: 0.76; }
+
+    &--start {
+        background: $c-brand;
+        color: #fff;
+        width: 100%;
+    }
+
+    &--cancel {
+        background: #f5f5f5;
+        color: $c-text;
+        border: 1px solid $c-border;
+    }
+
+    &--dismiss {
+        background: $c-overtime;
+        color: #fff;
+    }
+}

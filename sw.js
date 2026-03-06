@@ -1,0 +1,33 @@
+try {
+	importScripts(
+		'moment.js',
+		'contentScripts/URLPatternHelper.js',
+		'contentScripts/service-localstorage.js',
+		'contentScripts/defaultProject.js',
+		'contentScripts/service-background.js',
+		'api-services/workspace-service.js',
+		'api-services/token-service.js',
+		'api-services/user-service.js',
+		'api-services/auth-service.js',
+		'api-services/analytics-service.js',
+		'contentScripts/integration-background.js',
+		'api-services/project-task-service.js',
+		'api-services/tag-service.js',
+		'api-services/time-entry-service.js',
+		'api-services/client-service.js',
+		'contentScripts/custom-field-service-background.js',
+		'contentScripts/clockifyLocales.js',
+		'api-services/selectors-service.js',
+		'contentScripts/background.js',
+		'contentScripts/webSocket-background.js',
+		'contentScripts/idle-detection-background.js',
+		'contentScripts/context-menu.background.js',
+		'contentScripts/notification-background.js',
+		'contentScripts/stop-timer-at-background.js',
+		'contentScripts/reminder-background.js',
+		'contentScripts/pomodoro-background.js',
+		'api-services/notification-service.js'
+	);
+} catch (error) {
+	console.log(error);
+}
