@@ -66,6 +66,7 @@
 		"buffer": "^6.0.3",
 		"copy-webpack-plugin": "^11.0.0",
 		"core-js": "^3.39.0",
+		"cross-env": "^10.1.0",
 		"crypto": "npm:crypto-browserify",
 		"css-loader": "^5.2.7",
 		"file-loader": "^6.2.0",
